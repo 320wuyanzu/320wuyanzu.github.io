@@ -1,3 +1,4 @@
+chcp 65001
 git status
 git add *
 git commit -m "取消在新窗口打开笔记"
