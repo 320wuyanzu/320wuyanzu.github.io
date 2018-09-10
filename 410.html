@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>410 Error</title>
+    <link rel="stylesheet" href="./css/410.css">
+    <style>
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: #222222;
+}
+
+#container{
+  width:100%;
+  margin:auto;
+  padding-top: 15rem;
+}
+
+@font-face {
+    font-family: 'PressStart';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Press Start 2P'), local('PressStart2P-Regular'), url('./fonts/8Lg6LX8-ntOHUQnvQ0E7o3dD2UuwsmbX3BOp4SL_VwM.woff') format('woff');
+}
+p{
+  text-align:center;
+  margin:20px 0 20px 0; 
+}
+p#error{
+  font-size:4rem;
+}
+p#depra{
+  font-size: 2rem;
+}
+p#newpg{
+  font-size: 2rem;
+}
+@media (max-width: 650px) {
+    #container{
+        width: 100%;
+    }
+    p#error{
+        font-size:2rem;
+    }
+    p#depra{
+      font-size: 1rem;
+    }
+    p#newpg{
+      font-size: 1rem;
+    }
+}
+a{
+  text-decoration:none; 
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+p a{
+  color:#3eaf7c;
+  font-family:PressStart;
+}
+p a:hover{
+  -webkit-animation: neon 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon 1.5s ease-in-out infinite alternate;
+  animation: neon 1.5s ease-in-out infinite alternate; 
+}
+p a:hover{
+  color:#ffffff;  
+}
+@-webkit-keyframes neon {
+  from {
+    text-shadow: 0 0 10px #fff,
+               0 0 20px  #fff,
+               0 0 30px  #fff,
+               0 0 40px  #3eaf7c,
+               0 0 70px  #3eaf7c,
+               0 0 80px  #3eaf7c,
+               0 0 100px #3eaf7c,
+               0 0 150px #3eaf7c;
+  }
+  to {
+    text-shadow: 0 0 5px #fff,
+               0 0 10px #fff,
+               0 0 15px #fff,
+               0 0 20px #3eaf7c,
+               0 0 35px #3eaf7c,
+               0 0 40px #3eaf7c,
+               0 0 50px #3eaf7c,
+               0 0 75px #3eaf7c;
+  }
+}
+@-moz-keyframes neon {
+  from {
+    text-shadow: 0 0 10px #fff,
+               0 0 20px  #fff,
+               0 0 30px  #fff,
+               0 0 40px  #3eaf7c,
+               0 0 70px  #3eaf7c,
+               0 0 80px  #3eaf7c,
+               0 0 100px #3eaf7c,
+               0 0 150px #3eaf7c;
+  }
+  to {
+    text-shadow: 0 0 5px #fff,
+               0 0 10px #fff,
+               0 0 15px #fff,
+               0 0 20px #3eaf7c,
+               0 0 35px #3eaf7c,
+               0 0 40px #3eaf7c,
+               0 0 50px #3eaf7c,
+               0 0 75px #3eaf7c;
+  }
+}
+@keyframes neon {
+  from {
+    text-shadow: 0 0 10px #fff,
+               0 0 20px  #fff,
+               0 0 30px  #fff,
+               0 0 40px  #3eaf7c,
+               0 0 70px  #3eaf7c,
+               0 0 80px  #3eaf7c,
+               0 0 100px #3eaf7c,
+               0 0 150px #3eaf7c;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
+                0 0 20px #3eaf7c, 0 0 35px #3eaf7c, 0 0 40px #3eaf7c,
+                0 0 50px #3eaf7c,0 0 75px #3eaf7c;
+  }
+}
+  </style>
+</head>
+<body>
+    <div id="container">
+        <p id="error"><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/410" target="_blank">410 Error</a></p>
+        <p id="depra"><a href="https://320wuyanzu.github.io">Deprecated Page</a></p>
+        <p id="newpg"><a href="https://320wuyanzu.github.io">New Page Is Coming Soon</a></p>
+        <p><a href="https://320wuyanzu.github.io">← Go Back</a></p>
+    </div>
+</body>
+</html>
