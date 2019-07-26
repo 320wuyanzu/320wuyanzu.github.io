@@ -612,7 +612,7 @@
 		text-decoration: none;
 		width: 100%;
 	}
-
+	
 		input[type="text"]:invalid,
 		input[type="password"]:invalid,
 		input[type="email"]:invalid,
@@ -3679,8 +3679,10 @@
 			}
 
 	}
-	
-	#OilRate input{
+	#OilRate input[type="text"]{
+		display: inline-block;
+		width:4rem;
+		height: 1rem;
+		line-height: 1rem;
 		background: rgba(0, 0, 0, 0.01);
-	}
-	
+	}	
