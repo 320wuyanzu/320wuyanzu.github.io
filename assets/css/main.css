@@ -1,6 +1,9 @@
 @import url(font-awesome.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300i,400i");
 
+#OilRate input{
+	background: rgba(0, 0, 0, 0.01);
+}
 
 /* Reset */
 
