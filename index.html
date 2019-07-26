@@ -89,8 +89,8 @@
 								<li>第四段：<input maxlength="4" minlength="4" type="text" id="seg_4_start" placeholder="起始"> <input maxlength="4" minlength="4" type="text" id="seg_4_end" placeholder="截止"></li>
 								<li>第五段：<input maxlength="4" minlength="4" type="text" id="seg_5_start" placeholder="起始"> <input maxlength="4" minlength="4" type="text" id="seg_5_end" placeholder="截止"></li>
 								<li>第六段：<input maxlength="4" minlength="4" type="text" id="seg_6_start" placeholder="起始"> <input maxlength="4" minlength="4" type="text" id="seg_6_end" placeholder="截止"></li>
+								<li>滑油添加量：<input type="text" maxlength="3" minlength="1" placeholder="L-ENG" id="LEng"> <input type="text" maxlength="3" minlength="1" placeholder="R-ENG" id="REng"> <button id="CalRate">计算</button></li>
 								<li>总时长：<label id="TotalTime_m"></label> min（<label id="TotalTime_H"></label> H）</li>
-								<li>滑油添加量：<input type="text" maxlength="3" minlength="1" placeholder="L-ENG" id="LEng"> <input type="text" maxlength="3" minlength="1" placeholder="R-ENG" id="REng"></li>
 								<li>滑油消耗率：L=<label id="LRate"></label> ，R=<label id="RRate"></label></li>
 							</ul>
 						</div>
@@ -101,5 +101,77 @@
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/skel.min.js"></script>
 		<script src="assets/js/main.js"></script>
+		<script>
+			function checkTime(time_str){
+				time_str = time_str.trim();
+				if( 0 == time_str.length) return true;
+				if((4!=time_str.length) || time_str.includes(':')){
+					alert("时间填写格式不正确\n示例：\n'08：00'应填写为'0800'");
+					return false;
+				}
+				return true;
+			};
+			function calTotal(time_array){
+				let total = 0;
+				for(i=0;i<time_array.length;i++){
+					let s = time_array[i].s;
+					let e = time_array[i].e;
+					if((''!=s)&&(''!=e)){
+						let s_h = Number(s.substr(0,2));
+						let s_m = Number(s.substr(2,2));
+						s = s_h * 60 + s_m;
+						let e_h = Number(e.substr(0,2));
+						if (e_h<s_h) e_h = e_h+24;
+						let e_m = Number(e.substr(2,2));
+						e = e_h * 60 + e_m;
+						total = total+e-s;
+					}
+				}
+				return total;
+			}
+			document.getElementById('CalRate').onclick = function(e){
+				let time_array = [];
+				let seg_1_start = document.getElementById('seg_1_start').value;
+				let seg_1_end = document.getElementById('seg_1_end').value;
+				if (checkTime(seg_1_start) && checkTime(seg_1_end)){
+					time_array.push({'s':seg_1_start, 'e':seg_1_end});
+				}else return;
+				let seg_2_start = document.getElementById('seg_2_start').value;
+				let seg_2_end = document.getElementById('seg_2_end').value;
+				if (checkTime(seg_2_start) && checkTime(seg_2_end)){
+					time_array.push({'s':seg_2_start, 'e':seg_2_end});
+				}else return;
+				let seg_3_start = document.getElementById('seg_3_start').value;
+				let seg_3_end = document.getElementById('seg_3_end').value;
+				if (checkTime(seg_3_start) && checkTime(seg_3_end)){
+					time_array.push({'s':seg_3_start, 'e':seg_3_end});
+				}else return;
+				let seg_4_start = document.getElementById('seg_4_start').value;
+				let seg_4_end = document.getElementById('seg_4_end').value;
+				if (checkTime(seg_4_start) && checkTime(seg_4_end)){
+					time_array.push({'s':seg_4_start, 'e':seg_4_end});
+				}else return;
+				let seg_5_start = document.getElementById('seg_5_start').value;
+				let seg_5_end = document.getElementById('seg_5_end').value;
+				if (checkTime(seg_5_start) && checkTime(seg_5_end)){
+					time_array.push({'s':seg_5_start, 'e':seg_5_end});
+				}else return;
+				let seg_6_start = document.getElementById('seg_6_start').value;
+				let seg_6_end = document.getElementById('seg_6_end').value;
+				if (checkTime(seg_6_start) && checkTime(seg_6_end)){
+					time_array.push({'s':seg_6_start, 'e':seg_6_end});
+				}else return;
+				let total_m = calTotal(time_array);
+				let total_h = total_m / 60.0;
+				document.getElementById('TotalTime_m').innerText=total_m;
+				document.getElementById('TotalTime_H').innerText=total_h.toFixed(4);
+				let L = Number(document.getElementById('LEng').value.trim());
+				let R = Number(document.getElementById('REng').value.trim());
+				let Lrate = L/total_h;
+				let Rrate = R/total_h;
+				document.getElementById('LRate').innerText=Lrate.toFixed(4);
+				document.getElementById('RRate').innerText=Rrate.toFixed(4);
+			};
+		</script>
 	</body>
 </html>

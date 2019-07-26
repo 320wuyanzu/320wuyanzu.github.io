@@ -3685,11 +3685,19 @@
 		height: 1.4rem;
 		line-height: 1.2rem;
 		background: rgba(0, 0, 0, 0.01);
+		text-align: center;
+		vertical-align: middle;
 	}
 	#OilRate #LEng,
 	#OilRate #REng{
-		width: 4.2rem;
+		width: 4.3rem;
 	}
 	#OilRate label{
 		display: inline-block;
 	}	
+	#CalRate{
+		background: rgba(255, 255, 255, 0.5);
+	}
+	#CalRate:hover{
+		background: rgba(0, 0, 0, 0.5);		
+	}
