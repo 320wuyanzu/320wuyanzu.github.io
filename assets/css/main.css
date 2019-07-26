@@ -3681,8 +3681,15 @@
 	}
 	#OilRate input[type="text"]{
 		display: inline-block;
-		width:4rem;
-		height: 1rem;
-		line-height: 1rem;
+		width: 4rem;
+		height: 1.4rem;
+		line-height: 1.2rem;
 		background: rgba(0, 0, 0, 0.01);
+	}
+	#OilRate #LEng,
+	#OilRate #REng{
+		width: 6rem;
+	}
+	#OilRate label{
+		display: inline-block;
 	}	

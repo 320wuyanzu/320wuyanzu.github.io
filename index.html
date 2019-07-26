@@ -83,12 +83,15 @@
 						<div class="intro color1 span-3">
 							<h2 class="major">滑油消耗率计算</h2>
 							<ul>
-								<li>第一段：<input maxlength="4" type="text" id="seg_1_start" placeholder="起始"> <input maxlength="4" type="text" id="seg_1_end" placeholder="截止"></li>
-								<li>第二段：<input maxlength="4" type="text" id="seg_2_start" placeholder="起始"> <input maxlength="4" type="text" id="seg_2_end" placeholder="截止"></li>
-								<li>第三段：<input maxlength="4" type="text" id="seg_3_start" placeholder="起始"> <input maxlength="4" type="text" id="seg_3_end" placeholder="截止"></li>
-								<li>第四段：<input maxlength="4" type="text" id="seg_4_start" placeholder="起始"> <input maxlength="4" type="text" id="seg_4_end" placeholder="截止"></li>
-								<li>第五段：<input maxlength="4" type="text" id="seg_5_start" placeholder="起始"> <input maxlength="4" type="text" id="seg_5_end" placeholder="截止"></li>
-								<li>第六段：<input maxlength="4" type="text" id="seg_6_start" placeholder="起始"> <input maxlength="4" type="text" id="seg_6_end" placeholder="截止"></li>
+								<li>第一段：<input maxlength="4" minlength="4" type="text" id="seg_1_start" placeholder="起始"> <input maxlength="4" minlength="4" type="text" id="seg_1_end" placeholder="截止"></li>
+								<li>第二段：<input maxlength="4" minlength="4" type="text" id="seg_2_start" placeholder="起始"> <input maxlength="4" minlength="4" type="text" id="seg_2_end" placeholder="截止"></li>
+								<li>第三段：<input maxlength="4" minlength="4" type="text" id="seg_3_start" placeholder="起始"> <input maxlength="4" minlength="4" type="text" id="seg_3_end" placeholder="截止"></li>
+								<li>第四段：<input maxlength="4" minlength="4" type="text" id="seg_4_start" placeholder="起始"> <input maxlength="4" minlength="4" type="text" id="seg_4_end" placeholder="截止"></li>
+								<li>第五段：<input maxlength="4" minlength="4" type="text" id="seg_5_start" placeholder="起始"> <input maxlength="4" minlength="4" type="text" id="seg_5_end" placeholder="截止"></li>
+								<li>第六段：<input maxlength="4" minlength="4" type="text" id="seg_6_start" placeholder="起始"> <input maxlength="4" minlength="4" type="text" id="seg_6_end" placeholder="截止"></li>
+								<li>总时长：<label id="TotalTime_m"></label> min（<label id="TotalTime_H"></label> H）</li>
+								<li><input type="text" maxlength="3" minlength="1" placeholder="L添加量" id="LEng"> <input type="text" maxlength="3" minlength="1" placeholder="R添加量" id="REng"></li>
+								<li>L消耗率：<label id="LRate"></label> ，R消耗率：<label id="RRate"></label></li>
 							</ul>
 						</div>
 					</section>
